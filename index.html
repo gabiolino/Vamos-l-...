@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrida Incrível</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.imgur.com/o0QjJ3N.jpg') no-repeat center center/cover;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .start-screen, .video-screen {
+      display: none;
+      text-align: center;
+      color: white;
+    }
+
+    .start-screen.active, .video-screen.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      background-color: #ff3131;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #e02626;
+    }
+
+    video {
+      max-width: 90%;
+      max-height: 80vh;
+      border: 5px solid #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px black;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ffe600;
+      text-shadow: 2px 2px #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="start-screen active">
+      <h1>Bem-vindo à Corrida!</h1>
+      <button onclick="startVideo()">Clique aqui para começar</button>
+    </div>
+    <div class="video-screen">
+      <video src="lv_0_20250406232159.mp4" controls></video>
+    </div>
+  </div>
+
+  <script>
+    function startVideo() {
+      document.querySelector('.start-screen').classList.remove('active');
+      document.querySelector('.video-screen').classList.add('active');
+    }
+  </script>
+</body>
+</html>
